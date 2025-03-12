@@ -1,0 +1,17 @@
+D:\Project\API Code Generator\bin\Debug\net8.0\API Code Generator.exe
+D:\Project\API Code Generator\bin\Debug\net8.0\API Code Generator.deps.json
+D:\Project\API Code Generator\bin\Debug\net8.0\API Code Generator.runtimeconfig.json
+D:\Project\API Code Generator\bin\Debug\net8.0\API Code Generator.dll
+D:\Project\API Code Generator\bin\Debug\net8.0\API Code Generator.pdb
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.AssemblyInfoInputs.cache
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.AssemblyInfo.cs
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.csproj.CoreCompileInputs.cache
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.dll
+D:\Project\API Code Generator\obj\Debug\net8.0\refint\API Code Generator.dll
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.pdb
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.genruntimeconfig.cache
+D:\Project\API Code Generator\obj\Debug\net8.0\ref\API Code Generator.dll
+D:\Project\API Code Generator\bin\Debug\net8.0\HtmlAgilityPack.dll
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code Generator.csproj.AssemblyReference.cache
+D:\Project\API Code Generator\obj\Debug\net8.0\API Code.1F1DF9EF.Up2Date

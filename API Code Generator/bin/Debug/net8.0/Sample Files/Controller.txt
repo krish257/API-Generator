@@ -1,0 +1,134 @@
+using SN.DTO.{FolderName};
+using SN.Service.Services.{FolderName}.Interface;
+
+namespace SN.API.Controllers.{FolderName}
+{
+    [EnableCors("AllowMVCOrigin")]
+    [Route("api/[controller]")]
+    [ApiController]
+    [AllowAnonymous]
+    public class {ModalName}Controller : Controller
+    {
+        private readonly I{ModalName}Service _{ModalObjectName}Service;
+        private readonly IUserAuthentication _authentication;
+        private readonly IConfiguration _configuration;
+        private readonly LoggerUtility _logger;
+        public string _ExportExcelLocation;
+        public string ExportExcelLocation
+        {
+            get
+            {
+                _ExportExcelLocation = !string.IsNullOrWhiteSpace(_configuration.GetSection("AppSettings")["ExportExcel"]) ? _configuration.GetSection("AppSettings")["ExportExcel"] : string.Empty;
+                return _ExportExcelLocation;
+            }
+        }
+        public SurveyTypeController(LoggerUtility logger, IConfiguration configuration, I{ModalName}Service {ModalObjectName}Service, IUserAuthentication authentication)
+        {
+            _logger = logger;
+            _authentication = authentication;
+            _{ModalObjectName}Service = {ModalObjectName}Service;
+            _configuration = configuration;
+        }
+
+        #region Thread Category
+
+        [HttpPost]
+        [Route("Add")]
+        public IActionResult Add({ModalName}DTO {ModalObjectName}DTO)
+        {
+            try
+            {
+                {ModalObjectName}DTO.CreatedBy = _authentication.CurrentUserDetails.UserId;
+                var result = _{ModalObjectName}Service.Add({ModalObjectName}DTO);//passing the object to BLL to insert into database
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, _authentication.CurrentUserDetails);
+                return StatusCode(500, Resource.Resource.GeneralExceptionMessage);
+            }
+        }
+
+        [HttpPut]
+        [Route("Update")]
+        public IActionResult Update({ModalName}DTO {ModalObjectName}DTO)
+        {
+            try
+            {
+                {ModalObjectName}DTO.ModifiedBy = _authentication.CurrentUserDetails.UserId;
+                var result = _{ModalObjectName}Service.Update({ModalObjectName}DTO);//passing the object to BLL to insert into database
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, _authentication.CurrentUserDetails);
+                return StatusCode(500, Resource.Resource.GeneralExceptionMessage);
+            }
+        }
+
+        [HttpDelete]
+        [Route("Delete")]
+        public IActionResult Delete(long id)
+        {
+            try
+            {
+                //var PortfolioData = _{ModalObjectName}Service.GetById(id);
+                var result = _{ModalObjectName}Service.Delete(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, _authentication.CurrentUserDetails);
+                return StatusCode(500, Resource.Resource.GeneralExceptionMessage);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetAllActiveSurveyType")]
+        public IActionResult GetAllActiveSurveyType(string lang)
+        {
+            try
+            {
+                return Ok(_{ModalObjectName}Service.GetAllActiveSurveyType(lang));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, _authentication.CurrentUserDetails);
+                return StatusCode(500, Resource.Resource.GeneralExceptionMessage);
+            }
+        }
+
+       
+        [HttpGet]
+        [Route("GetById")]
+        public IActionResult GetById(long id)
+        {
+            try
+            {
+                return Ok(_{ModalObjectName}Service.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, _authentication.CurrentUserDetails);
+                return StatusCode(500, Resource.Resource.GeneralExceptionMessage);
+            }
+        }
+
+        [HttpPost]
+        [Route("GetSurveyTypeFilter")]
+        public IActionResult GetSurveyTypeFilter({ModalName}DTO {ModalObjectName}DTO)
+        {
+            try
+            {
+                return Ok(_{ModalObjectName}Service.GetSurveyTypeFilter({ModalObjectName}DTO));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, _authentication.CurrentUserDetails);
+                return StatusCode(500, Resource.Resource.GeneralExceptionMessage);
+            }
+        }
+
+        #endregion
+    }
+}
